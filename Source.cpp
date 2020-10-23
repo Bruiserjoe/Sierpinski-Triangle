@@ -36,7 +36,6 @@ public:
 				int xchange2 = (triangles[i].x1 + triangles[i].x2) / 2;
 				int xchange3 = (triangles[i].x3 + triangles[i].x1) / 2;
 				int xchange4 = (triangles[i].x2 + triangles[i].x3) / 2;
-				std::cout << ychange1 << std::endl;
 				Triangle t1 = { triangles[i].x1, xchange2, xchange3, triangles[i].y1, ychange1, ychange1 };
 				Triangle t2 = { xchange2, triangles[i].x2, xchange4, ychange1, triangles[i].y2, triangles[i].y2 };
 				Triangle t3 = { xchange3, xchange4, triangles[i].x3, ychange1, triangles[i].y2, triangles[i].y2 };
