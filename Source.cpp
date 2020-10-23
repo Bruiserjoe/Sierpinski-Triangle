@@ -14,8 +14,6 @@ struct Triangle {
 };
 Triangle start = { 400, 10, 790, 50, 780, 780};
 std::vector<Triangle> triangles;
-std::vector<Triangle> drawtr;
-//Push back new triangles into vector above and remove the old triangle used to make them
 class Bruh : public olc::PixelGameEngine
 {
 public:
@@ -30,11 +28,11 @@ public:
 	}
 	bool OnUserUpdate(float fElaspedTime) override {
 		std::vector<Triangle> tlist;
-		//Actually make a sierpinski triangle now retard
-		//Get math right lol
+		//Pretty good
 		for (int i = 0; i < triangles.size(); i++) {
-			int ychange1 = (triangles[i].y1 + triangles[i].y2) / 2;
-			//if (ychange1 > 200) {
+			int ycheck = (triangles[i].y2 - triangles[i].y1);
+			if (ycheck > 10) {
+				int ychange1 = (triangles[i].y1 + triangles[i].y2) / 2;
 				int xchange2 = (triangles[i].x1 + triangles[i].x2) / 2;
 				int xchange3 = (triangles[i].x3 + triangles[i].x1) / 2;
 				int xchange4 = (triangles[i].x2 + triangles[i].x3) / 2;
@@ -45,7 +43,7 @@ public:
 				tlist.push_back(t1);
 				tlist.push_back(t2);
 				tlist.push_back(t3);
-			
+			}
 			triangles.erase(triangles.begin() + i);
 			
 		}
