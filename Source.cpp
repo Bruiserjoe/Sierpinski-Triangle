@@ -30,8 +30,7 @@ public:
 	}
 	bool OnUserUpdate(float fElaspedTime) override {
 		std::vector<Triangle> tlist;
-		//Actually make a sierpinski triangle now retard
-		//Get math right lol
+		//Optimize it now
 		for (int i = 0; i < triangles.size(); i++) {
 			int ychange1 = (triangles[i].y1 + triangles[i].y2) / 2;
 			//if (ychange1 > 200) {
